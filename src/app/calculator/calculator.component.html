@@ -1,0 +1,63 @@
+<ef-layout debug container flex class="outer">
+  <h1 class="header">SIP Calculator</h1>
+  <ef-layout flex class="inner">
+    <ef-layout container class="inner">
+      <label class="slider-label" for="">Monthly Investment</label>
+      <ef-slider
+        id="monthlyInvestment"
+        class="slider"
+        show-input-field
+        min="500"
+        max="100000"
+        value="5000"
+        type="number"
+        (input)="updateMonthlyInvestment($event)"
+      ></ef-slider>
+      <label class="slider-label" for="">Expected Return rate</label>
+      <ef-slider
+        id="rateOfInterest"
+        class="slider"
+        show-input-field
+        min="1"
+        max="30"
+        value="12"
+        (input)="updateRateOfInterest($event)"
+      ></ef-slider>
+      <label class="slider-label" for="">Investment Years</label>
+      <ef-slider
+        id="investmentPeriod"
+        class="slider"
+        show-input-field
+        min="1"
+        max="50"
+        value="10"
+        (input)="updateInvestmentPeriod($event)"
+      ></ef-slider>
+      <div>
+        <div class="returns-data">
+          <p class="returns-data-label">Invested Amount</p>
+          <p id="investedAmount" class="returns-data-value">₹ 600000</p>
+        </div>
+        <div class="returns-data">
+          <p class="returns-data-label">Estd. Returns</p>
+          <p id="estimatedReturns" class="returns-data-value">₹ 561695</p>
+        </div>
+        <div class="returns-data">
+          <p class="returns-data-label">Total Value</p>
+          <p id="futureValue" class="returns-data-value">₹ 1161695</p>
+        </div>
+      </div>
+    </ef-layout>
+    <ef-layout class="inner swing-gauge">
+      <ef-swing-gauge
+        primary-value="600000"
+        secondary-value="561695"
+        primary-label="Investment"
+        secondary-label="Returns"
+        primary-legend="Total Invested Amount"
+        secondary-legend="Total Estimated Returns">
+      ></ef-swing-gauge>
+      <ef-button cta class="large">Invest Now</ef-button>
+    </ef-layout>
+  </ef-layout>
+</ef-layout>
