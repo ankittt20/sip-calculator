@@ -51,11 +51,41 @@ ef-swing-gauge {
 
 ef-button {
   display: flex;
-  margin: 50px auto 0;
 }
 
 .large {
   height: 33px;
   min-width: 200px;
   font-size: 140%;
+  margin: 50px auto 0;
+}
+
+.small {
+  margin-top: 20px;
+}
+
+.credentials-input {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 10px;
+}
+
+ef-email-field{
+  width: 100%;
+}
+
+ef-password-field{
+  width: 100%;
+}
+
+section {
+  display:flex;
+}
+
+#overlay {
+  height: 250px;
+  width: 400px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
 }

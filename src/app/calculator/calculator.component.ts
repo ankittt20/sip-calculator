@@ -10,6 +10,20 @@ import { Router } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CalculatorComponent {
+  openButton: HTMLElement | null = null;
+  overlay: HTMLElement | null = null;
+
+  ngOnInit() {
+    this.openButton = document.getElementById('open-overlay');
+    this.overlay = document.getElementById('overlay');
+
+    if (this.openButton && this.overlay) {
+      this.openButton.addEventListener('tap', () => {
+        (this.overlay as any).opened = true;
+      });
+    }
+  }
+
   router: Router;
   constructor(router: Router) {
     this.router = router;

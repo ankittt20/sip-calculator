@@ -55,9 +55,32 @@
         primary-label="Investment"
         secondary-label="Returns"
         primary-legend="Total Invested Amount"
-        secondary-legend="Total Estimated Returns">
-      ></ef-swing-gauge>
-      <ef-button (click)="router.navigate(['/invest-now']);" cta class="large">Invest Now</ef-button>
+        secondary-legend="Total Estimated Returns"
+      >
+        ></ef-swing-gauge
+      >
+      <ef-overlay id="overlay" with-backdrop with-shadow>
+        <h5>LOGIN</h5>
+        <div class="credentials-input">
+          <label for="email">Email</label>
+          <ef-email-field
+            id="email"
+            placeholder="Email Address"
+            icon="email"
+          >
+          </ef-email-field>
+        </div>
+        <div class="credentials-input">
+          <label for="password">Password</label>
+          <ef-password-field id="password" placeholder="Password"></ef-password-field>
+        </div>
+        <ef-button (click)="router.navigate(['/invest-now'])" cta class="small"
+          >Login</ef-button
+        >
+      </ef-overlay>
+      <section>
+        <ef-button cta id="open-overlay" class="large">Invest Now</ef-button>
+      </section>
     </ef-layout>
   </ef-layout>
 </ef-layout>
