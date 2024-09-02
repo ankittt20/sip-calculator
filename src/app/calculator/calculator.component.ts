@@ -1,4 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calculator',
@@ -9,6 +10,10 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CalculatorComponent {
+  router: Router;
+  constructor(router: Router) {
+    this.router = router;
+  }
   monthlyInvestment = 5000;
   rateOfInterest = 12;
   investmentPeriod = 10;
